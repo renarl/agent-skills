@@ -33,6 +33,46 @@ agent-brief/
 └── scripts/              # Helper scripts
 ```
 
+### reddit-research
+
+A Reddit research plugin for Claude. Fetches and analyzes Reddit threads, subreddits, and discussions using Reddit's public JSON API — no API key or authentication required.
+
+Includes both a `/reddit-research` slash command for on-demand use and an auto-activating skill that triggers when Reddit research comes up in conversation. Handles the full complexity of Reddit's data: post metadata, comment trees, nested/truncated comment extraction via the `morechildren` API, subreddit search, and feed browsing (hot/top/new).
+
+Key design decisions:
+
+- **curl over WebFetch** — uses curl with a browser User-Agent for reliable JSON fetching
+- **Never fabricates** — reports only what was actually found in the fetched data
+- **Recursive comment extraction** — handles Reddit's comment truncation with batched fetching and rate limiting
+
+#### Usage
+
+Drop the `reddit-research` folder into your Claude plugins directory. Use the slash command directly or let the skill auto-activate:
+
+```
+/reddit-research https://www.reddit.com/r/programming/comments/abc123/some_post/
+/reddit-research r/machinelearning transformer architectures
+/reddit-research what does reddit think about Rust vs Go
+```
+
+Or just ask naturally — *"What are people on Reddit saying about the new MacBook Pro?"*
+
+#### Structure
+
+```
+reddit-research/
+├── .claude-plugin/
+│   └── plugin.json           # Plugin metadata
+├── commands/
+│   └── reddit-research.md    # Slash command definition
+├── skills/
+│   └── reddit-research/
+│       ├── SKILL.md           # Core skill instructions
+│       └── references/
+│           └── nested-comments.md  # Recursive comment extraction guide
+└── README.md
+```
+
 ## License
 
 MIT

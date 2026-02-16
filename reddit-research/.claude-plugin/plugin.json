@@ -1,0 +1,9 @@
+{
+  "name": "reddit-research",
+  "version": "0.1.0",
+  "description": "Research Reddit threads, subreddits, and discussions using curl with JSON endpoints — including full nested comment extraction",
+  "author": {
+    "name": "Renars"
+  },
+  "keywords": ["reddit", "research", "social-media", "comments", "threads"]
+}
