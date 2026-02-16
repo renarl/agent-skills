@@ -13,17 +13,17 @@ Add this repo as a marketplace in Claude Code:
 Then install individual skills:
 
 ```
-/plugin install agent-brief@r-agent-skills
+/plugin install scope-and-delegate@r-agent-skills
 /plugin install reddit-research@r-agent-skills
 ```
 
 ## Skills
 
-### agent-brief
+### scope-and-delegate
 
 A task delegation and project scoping framework for Claude. When you hand Claude a non-trivial project, this skill teaches it to behave like a well-managed employee: clarify goals before starting, break work into checkpoints, save progress persistently, and stop at natural decision points for your approval.
 
-**Inspired by** Ethan Mollick's [Management as AI Superpower](https://www.oneusefulthing.org/p/management-as-ai-superpower), which argues that the bottleneck with AI agents isn't the AI's capability — it's our ability to delegate well. Mollick's delegation framework depends on three variables: how long the task would take you, the probability of AI success on each attempt, and the overhead of requesting and evaluating output. The skills that matter most turn out to be the "soft" ones: scoping problems, defining deliverables, and recognizing when output is off.
+**Inspired by** Ethan Mollick's [Management as AI Superpower](https://www.oneusefulthing.org/p/management-as-ai-superpower), which argues that the bottleneck with AI agents isn't the AI's capability — it's our ability to delegate well. The skills that matter most turn out to be the "soft" ones: scoping problems, defining deliverables, and recognizing when output is off.
 
 This skill operationalizes that insight. It gives Claude a structured protocol for:
 
@@ -34,18 +34,29 @@ This skill operationalizes that insight. It gives Claude a structured protocol f
 
 #### Usage
 
-Drop the `agent-brief` folder into your Claude skills directory. The skill triggers on phrases like "scope this out", "let's plan this", "brief me", or any request involving project kickoff and multi-phase work.
+Use the slash command or let the skill auto-activate:
+
+```
+/scope-and-delegate build a notification system for the app
+/scope-and-delegate migrate the database from Postgres to PlanetScale
+```
+
+Or just ask naturally — *"Scope this out before we start"*, *"Let's plan this project"*, *"Brief me on what we need"*.
 
 #### Structure
 
 ```
-agent-brief/
-├── SKILL.md              # Core skill instructions
-├── assets/               # Supporting files
+scope-and-delegate/
+├── .claude-plugin/
+│   └── plugin.json           # Plugin metadata
+├── commands/
+│   └── scope-and-delegate.md # Slash command definition
+├── SKILL.md                  # Core skill instructions
+├── assets/                   # Supporting files
 ├── references/
-│   ├── api_reference.md  # Tool API reference
-│   └── templates.md      # Copy-paste brief templates
-└── scripts/              # Helper scripts
+│   ├── api_reference.md      # Tool API reference
+│   └── templates.md          # Copy-paste brief templates
+└── scripts/                  # Helper scripts
 ```
 
 ### reddit-research

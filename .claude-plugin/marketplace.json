@@ -9,8 +9,8 @@
   },
   "plugins": [
     {
-      "name": "agent-brief",
-      "source": "./agent-brief",
+      "name": "scope-and-delegate",
+      "source": "./scope-and-delegate",
       "description": "Task delegation and project scoping framework. Teaches Claude to clarify goals, break work into checkpoints, and stop at decision points for approval.",
       "version": "1.0.0",
       "keywords": ["task-delegation", "project-management", "checkpointing", "briefs"],

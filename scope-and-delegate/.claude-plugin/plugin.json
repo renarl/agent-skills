@@ -1,5 +1,5 @@
 {
-  "name": "agent-brief",
+  "name": "scope-and-delegate",
   "version": "1.0.0",
   "description": "Task delegation and project scoping framework. Teaches Claude to clarify goals, break work into checkpoints, and stop at decision points for approval.",
   "author": {

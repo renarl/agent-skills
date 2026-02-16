@@ -1,5 +1,5 @@
 ---
-name: agent-brief
+name: scope-and-delegate
 description: Framework for establishing clear task delegation with defined goals, boundaries, success criteria, and deliverables. Use this skill whenever the user is starting a new project, delegating complex work, or wants Claude to clarify scope and expectations before beginning. Trigger on phrases like "scope this out", "clarify before starting", "what do you need to know", "let's plan this", "brief me", "set up a project", or any request involving delegation, project kickoff, requirements gathering, or multi-phase work. Also trigger when the user asks Claude to break down a large task into phases, create a project structure, or establish checkpoints for complex work. If the task is non-trivial and multi-session, this skill should be used.
 ---
 
