@@ -1,0 +1,9 @@
+{
+  "name": "verbalized-sampling",
+  "version": "0.1.0",
+  "description": "Generate diverse, creative responses using the Verbalized Sampling technique — a research-backed prompting method that mitigates mode collapse in LLMs",
+  "author": {
+    "name": "Renars"
+  },
+  "keywords": ["verbalized-sampling", "diversity", "creativity", "mode-collapse", "generation"]
+}
